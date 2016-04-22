@@ -35,6 +35,7 @@ imei|IMEI on Android|string|N
 mac|Mac Address|string|N
 device|The brand of the device|string|N
 androidid|The Android ID on Android|string|N
+advid|The Google Advertising ID of user's device|string|N
 idfa|The IDFA on IOS|string|N
 udid|The UDID of the device|string|N
 traffic|The value is `incentive` or `non-incentive`|string|N

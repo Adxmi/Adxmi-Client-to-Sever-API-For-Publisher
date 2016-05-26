@@ -59,7 +59,8 @@ DDL|Redirect to a website to download app direct.
 
 #### Example
 
->http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page=1&page_size=20&user_id=callback_self_define_param&ip=192.173.145.81&os_version=4.0.0&os=android&category=SDL&imei=014318001329861&mac=94d859c88359&device=TCL&androidid=26d3bb70d16d3af2&advid=2ead2362-bdf6-41d3-9b6f-6f54a5564aa1&idfa=CA35B56F-884F-4619-A3D9-BF0F2F38948D&udid=bd9fe66c29e3452794833c2b8082c41bbc181414&traffic=incentive&carrier=Chinamobile&nettype=4g&sign=5cdaa71aece6326b7998968ed7fbffca
+>Android:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page=1&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=4.0.0&os=android&category=SDL&imei=014318001329861&mac=94d859c88359&device=TCL&androidid=26d3bb70d16d3af2&advid=2ead2362-bdf6-41d3-9b6f-6f54a5564aa1&traffic=incentive&carrier=Chinamobile&nettype=4g&sign=bad162d5f5854350fb426fb746d5f91d
+>iOS:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page=1&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=7.1.0&os=ios&category=SDL&mac=94d859c88359&idfa=CA35B56F-884F-4619-A3D9-BF0F2F38948D&udid=bd9fe66c29e3452794833c2b8082c41bbc181414&traffic=incentive&carrier=Chinamobile&nettype=wifi&sign=97c98372fdcfcdaff96c7f2933add5d2
 
 ### Response Parameter
 

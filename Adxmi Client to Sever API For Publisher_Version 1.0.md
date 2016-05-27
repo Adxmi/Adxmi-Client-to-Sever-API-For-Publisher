@@ -26,10 +26,10 @@ In order to use this api, publishers need to go to our official website (www.adx
 | app_id     | Apply from www.adxmi.com for the application                                                                                          | string | Y         |
 | sign       | Signature for query parameters. See URL Signature Function for detail                                                                 | string | Y         |
 | page_size  | Define the number of offers                                                                                                           | int    | Y         |
+| os         | The operating system of the device(`ios` or `android`)                                                                                | string | Y         |
 | user_id    | Identify the user who complete a task. The server callback can return this value when user complete a task                            | string | N         |
 | ip         | The ip address of user                                                                                                                | string | N         |
 | os_version | A string representing the os version of the device (eg: 4.2.2)                                                                        | string | N         |
-| os         | The operating system of the device(`ios` or `android`)                                                                                | string | N         |
 | category   | define the offer category you would like to pull (eg: "SDL,WEB"), seperated by "," , default setting is return all available category | string | N         |
 | imei       | IMEI on Android                                                                                                                       | string | N         |
 | mac        | Mac Address                                                                                                                           | string | N         |

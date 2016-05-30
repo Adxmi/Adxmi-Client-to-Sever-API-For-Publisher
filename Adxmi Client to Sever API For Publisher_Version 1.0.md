@@ -59,8 +59,8 @@ In order to use this api, publishers need to go to our official website (www.adx
 
 #### Example
 
->Android:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page=1&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=4.0.0&os=android&category=SDL&imei=014318001329861&mac=94d859c88359&device=TCL&androidid=26d3bb70d16d3af2&advid=2ead2362-bdf6-41d3-9b6f-6f54a5564aa1&traffic=incentive&carrier=Chinamobile&nettype=4g&sign=bad162d5f5854350fb426fb746d5f91d
->iOS:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page=1&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=7.1.0&os=ios&category=SDL&mac=94d859c88359&idfa=CA35B56F-884F-4619-A3D9-BF0F2F38948D&udid=bd9fe66c29e3452794833c2b8082c41bbc181414&traffic=incentive&carrier=Chinamobile&nettype=wifi&sign=97c98372fdcfcdaff96c7f2933add5d2
+>Android:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=4.0.0&os=android&category=SDL&imei=014318001329861&mac=94d859c88359&device=TCL&androidid=26d3bb70d16d3af2&advid=2ead2362-bdf6-41d3-9b6f-6f54a5564aa1&traffic=incentive&carrier=Chinamobile&nettype=4g&sign=b837ecbf614b5800930cc680e45e9d24
+>iOS:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=7.1.0&os=ios&category=SDL&mac=94d859c88359&idfa=CA35B56F-884F-4619-A3D9-BF0F2F38948D&udid=bd9fe66c29e3452794833c2b8082c41bbc181414&traffic=incentive&carrier=Chinamobile&nettype=wifi&sign=99671c4dd8f315b117483ff1751097df
 
 ### Response Parameter
 

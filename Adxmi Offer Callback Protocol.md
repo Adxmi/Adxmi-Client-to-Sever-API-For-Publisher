@@ -20,7 +20,7 @@ Your can add these macros to your callback url to receive the callback parameter
 | {time}      | The time that Adxmi create this order                                                                                                                                                                                                                   |
 | {storeid}   | Id from application store                                                                                                                                                                                                                               |
 | {pkg}       | The package name of campaign app                                                                                                                                                                                                                        |
-| {ad_type}   | product enum: `wall,video,custom,api`                                                                                                                                                                                                                   |
+| {ad_type}   | product enum: `wall, video, custom, api`                                                                                                                                                                                                                   |
 | {imei}      | IMEI                                                                                                                                                                                                                                                    |
 | {mac}       | MAC                                                                                                                                                                                                                                                     |
 | {androidid} | Android ID                                                                                                                                                                                                                                              |
@@ -30,6 +30,9 @@ Your can add these macros to your callback url to receive the callback parameter
 | {user_id}   | Developers can set up their own `user_id` In Offers API, then user ID can be used to replace the CID identification which is offered by Adxmi. (Adxmi will generate an identification number for each device) Otherwise, Adxmi will use CID as user ID. |
 | {chn}       | Developers can set up their own `chn` In Offers API.                                                                                                                                                                                                    |
 | {ip}        | The ip of the user                                                                                                                                                                                                                                      |
+
+####Example
+    http://your_host/your_script?oid={order}&user={user_id}&ip={ip}
 
 ###Default Callback Parameters
 If your callback url does not contain any macro, we will append these parameters to it.

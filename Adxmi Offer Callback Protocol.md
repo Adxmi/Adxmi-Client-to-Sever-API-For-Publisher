@@ -6,7 +6,7 @@
 *    All parameters will process urlencode.
 *    After setting callback url in [Developer Control Panel](https://www.adxmi.com/apps#/settings), Adxmi will allocate an individual secret key `callback_token` for signature using.
 
-###Supported Macros(New!!!)
+###Supported Macros (New!!!)
 Your can add these macros to your callback url to receive the callback parameters you want. Please remember that Adxmi will automatically append a signature parameter `sign` to your callback url.
 
 | Macro       | Description                                                                                                                                                                                                                                             |

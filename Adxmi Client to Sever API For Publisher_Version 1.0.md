@@ -27,7 +27,7 @@ In order to use this api, publishers need to go to our official website (www.adx
 | sign       | Signature for query parameters. See URL Signature Function for detail                                                                 | string | Y         |
 | page_size  | Define the number of offers                                                                                                           | int    | Y         |
 | os         | The operating system of the device(`ios` or `android`)                                                                                | string | Y         |
-| user_id    | Identify the user who complete a task. The server callback can return this value when user complete a task                            | string | N         |
+| user_id    | Identify the user who completed a task. The server callback can return this value when user completed a task                          | string | N         |
 | ip         | The ip address of user                                                                                                                | string | N         |
 | os_version | A string representing the os version of the device (eg: 4.2.2)                                                                        | string | N         |
 | category   | define the offer category you would like to pull (eg: "SDL,WEB"), seperated by "," , default setting is return all available category | string | N         |
@@ -41,6 +41,7 @@ In order to use this api, publishers need to go to our official website (www.adx
 | traffic    | The value is `incentive` or `non-incentive`                                                                                           | string | N         |
 | carrier    | The carrier of the device                                                                                                             | string | N         |
 | nettype    | The net type of the device(`2g`、`2.5g`、`3g`、`4g`、`wifi`)                                                                          | string | N         |
+| chn        | Identify the channel which completed a task.                                                                                          | string | N         |
 
 
 #### Notice
@@ -59,8 +60,8 @@ In order to use this api, publishers need to go to our official website (www.adx
 
 #### Example
 
->Android:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=4.0.0&os=android&category=SDL&imei=014318001329861&mac=94d859c88359&device=TCL&androidid=26d3bb70d16d3af2&advid=2ead2362-bdf6-41d3-9b6f-6f54a5564aa1&traffic=incentive&carrier=Chinamobile&nettype=4g&sign=b837ecbf614b5800930cc680e45e9d24
->iOS:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=7.1.0&os=ios&category=SDL&mac=94d859c88359&idfa=CA35B56F-884F-4619-A3D9-BF0F2F38948D&udid=bd9fe66c29e3452794833c2b8082c41bbc181414&traffic=incentive&carrier=Chinamobile&nettype=wifi&sign=99671c4dd8f315b117483ff1751097df
+>Android:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=4.0.0&os=android&category=SDL&imei=014318001329861&mac=94d859c88359&device=TCL&androidid=26d3bb70d16d3af2&advid=2ead2362-bdf6-41d3-9b6f-6f54a5564aa1&traffic=incentive&carrier=Chinamobile&nettype=4g&chn=abc123&sign=79588d6cd98106082c7ba55e57168775
+>iOS:http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=your_user_id&ip=192.173.145.81&os_version=7.1.0&os=ios&category=SDL&mac=94d859c88359&idfa=CA35B56F-884F-4619-A3D9-BF0F2F38948D&udid=bd9fe66c29e3452794833c2b8082c41bbc181414&traffic=incentive&carrier=Chinamobile&nettype=wifi&chn=abc123&sign=da7f1453a47986aa6a42142b2304f6c0
 
 ### Response Parameter
 

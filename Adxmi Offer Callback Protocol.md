@@ -1,37 +1,67 @@
 #Adxmi Offer Callback Protocol
 ###Statement
-*	The uniform encoding of interface: UTF-8
-*	Once Adxmi gets the feedback data from advertisers, we will report back to developers' server immediately.
-*	It will need developers to offer an interface to receive data. The method for interface to receive data: GET.
-*	All parameters will process urlencode.
-*	After setting callback url in [Developer Control Panel](https://www.adxmi.com/apps#/settings), Adxmi will allocate an individual secret key `callback_token` for signature using.
+*    The uniform encoding of interface: UTF-8
+*    Once Adxmi gets the feedback data from advertisers, we will report back to developers' server immediately.
+*    It will need developers to offer an interface to receive data. The method for interface to receive data: GET.
+*    All parameters will process urlencode.
+*    After setting callback url in [Developer Control Panel](https://www.adxmi.com/apps#/settings), Adxmi will allocate an individual secret key `callback_token` for signature using.
 
-###Callback Parameters
-| Key     | Value Description                                                                                                            |
-|---------|------------------------------------------------------------------------------------------------------------------------------|
-| order   | The unique id of the order. If developer receives the same order ID, that means the order is already existed.                |
-| app     | your application id                                                                                                          |
-| ad      | The name of the offer                                                                                                        |
-| adid    | The id of the offer                                                                                                          |
-| user    | Developers can set up their own `user_id` In Offers API.                                                                     |
-| revenue | The revenue($) that developer can earn                                                                                       |
-| points  | The currency points that users can earn                                                                                      |
-| time    | The time that Adxmi create this order                                                                                        |
-| storeid | Id from application store                                                                                                    |
-| pkg     | package name of campaign app                                                                                                 |
-| sign    | Parameters signature, used for verify the integrity of the above parameters, to prevent the third party to tamper with them. |
+###Supported Macros (New!!!)
+Your can add these macros to your callback url to receive the callback parameters you want. Please remember that Adxmi will automatically append a signature parameter `sign` to your callback url.
+
+| Macro       | Description                                                                                                                                                                                                                                             |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| {order}     | The unique id of the order. If developer receives the same order ID, that means the order is already existed.                                                                                                                                           |
+| {app}       | Your application id                                                                                                                                                                                                                                     |
+| {ad}        | The name of the offer                                                                                                                                                                                                                                   |
+| {adid}      | The id of the offer                                                                                                                                                                                                                                     |
+| {revenue}   | The revenue($) that developer can earn                                                                                                                                                                                                                  |
+| {points}    | The currency points that users can earn                                                                                                                                                                                                                 |
+| {time}      | The time that Adxmi create this order                                                                                                                                                                                                                   |
+| {storeid}   | Id from application store                                                                                                                                                                                                                               |
+| {pkg}       | The package name of campaign app                                                                                                                                                                                                                        |
+| {ad_type}   | product enum: `wall, video, custom, api`                                                                                                                                                                                                                   |
+| {imei}      | IMEI                                                                                                                                                                                                                                                    |
+| {mac}       | MAC                                                                                                                                                                                                                                                     |
+| {androidid} | Android ID                                                                                                                                                                                                                                              |
+| {advid}     | Google Advertising ID                                                                                                                                                                                                                                   |
+| {idfa}      | IDFA                                                                                                                                                                                                                                                    |
+| {udid}      | UDID                                                                                                                                                                                                                                                    |
+| {user_id}   | Developers can set up their own `user_id` In Offers API, then user ID can be used to replace the CID identification which is offered by Adxmi. (Adxmi will generate an identification number for each device) Otherwise, Adxmi will use CID as user ID. |
+| {chn}       | Developers can set up their own `chn` In Offers API.                                                                                                                                                                                                    |
+| {ip}        | The ip of the user                                                                                                                                                                                                                                      |
+
+####Example
+    http://your_host/your_script?oid={order}&user={user_id}&ip={ip}
+
+###Default Callback Parameters
+If your callback url does not contain any macro, we will append these parameters to it.
+
+| Key     | Value Description                                                                                                                                                                                                                                                |
+|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| order   | The unique id of the order. If developer receives the same order ID, that means the order is already existed.                                                                                                                                                    |
+| app     | your application id                                                                                                                                                                                                                                              |
+| ad      | The name of the offer                                                                                                                                                                                                                                            |
+| adid    | The id of the offer                                                                                                                                                                                                                                              |
+| user    | User ID: Developers can set up their own `user_id` In Offers API, then user ID can be used to replace the CID identification which is offered by Adxmi. (Adxmi will generate an identification number for each device) Otherwise, Adxmi will use CID as user ID. |
+| revenue | The revenue($) that developer can earn                                                                                                                                                                                                                           |
+| points  | The currency points that users can earn                                                                                                                                                                                                                          |
+| time    | The time that Adxmi create this order                                                                                                                                                                                                                            |
+| storeid | Id from application store                                                                                                                                                                                                                                        |
+| pkg     | package name of campaign app                                                                                                                                                                                                                                     |
+| sign    | Parameters signature, used for verify the integrity of the above parameters, to prevent the third party to tamper with them.                                                                                                                                     |
 
 ###Signature Algorithm
 
-*	Use all parameters except `sign` in 【Callback Parameters】 list as key to compute MD5 value. Assume that the parameters participate in computing signature are k1,k2,k3, then the signature calculation method is below:
+*    Use all parameters except `sign` in 【Callback Parameters】 list as key to compute MD5 value. Assume that the parameters participate in computing signature are k1,k2,k3, then the signature calculation method is below:
 
-	Formatting the non-binary type request parameters to key=value format. For example: k1=v1,k2=v2,k3=v3 Sort the key-value in ascending order and connect them together. For example: k1=v1k2=v2k3=v3 Append `callback_token` after the conneted key-value string. MD5 of the above string is the signature value.
+    Formatting the non-binary type request parameters to key=value format. For example: k1=v1,k2=v2,k3=v3 Sort the key-value in ascending order and connect them together. For example: k1=v1k2=v2k3=v3 Append `callback_token` after the conneted key-value string. MD5 of the above string is the signature value.
 
-*	`Notice`:
-	*	Don't include the sign(signature) parameters when calculating the signature.
-	*	The parameters in signature procedure have not been processed by urlencode.
-	*	In order to ensure the signature won't be abnormal when changing the callback parameters, please make sure using the verification function we offer as the verification method.
-	*	If developer's callback url contains parameters not mentioned above, these parameters will also join in the signature.
+*    `Notice`:
+    *    Don't include the sign(signature) parameters when calculating the signature.
+    *    The parameters in signature procedure have not been processed by urlencode.
+    *    In order to ensure the signature won't be abnormal when changing the callback parameters, please make sure using the verification function we offer as the verification method.
+    *    If developer's callback url contains parameters not mentioned above, these parameters will also join in the signature.
 
 ###Verification Function
 
@@ -39,33 +69,33 @@
 
 ```php
 function verifySignature($callback_url, $callback_token){
-	$sign = null;
-	$params = array();
-	$url_parse = parse_url($callback_url);
-	if (isset($url_parse['query'])){
-	    $query_arr = explode('&', $url_parse['query']);
-	    if (!empty($query_arr)){
-	        foreach($query_arr as $p){
-	            if (strpos($p, '=') !== false){
-	                list($k, $v) = explode('=', $p);
-	                if($k == "sign"){
-	                    $sign = $v;
-	                }else{
-	                    $params[$k] = urldecode($v);
-	                }
-	            }
-	        }
-	    }
-	}
+    $sign = null;
+    $params = array();
+    $url_parse = parse_url($callback_url);
+    if (isset($url_parse['query'])){
+        $query_arr = explode('&', $url_parse['query']);
+        if (!empty($query_arr)){
+            foreach($query_arr as $p){
+                if (strpos($p, '=') !== false){
+                    list($k, $v) = explode('=', $p);
+                    if($k == "sign"){
+                        $sign = $v;
+                    }else{
+                        $params[$k] = urldecode($v);
+                    }
+                }
+            }
+        }
+    }
 
-	$str = '';
-	ksort($params);
-	foreach ($params as $k => $v) {
-	    $str .= "{$k}={$v}";
-	}
-	$str .= $callback_token;
+    $str = '';
+    ksort($params);
+    foreach ($params as $k => $v) {
+        $str .= "{$k}={$v}";
+    }
+    $str .= $callback_token;
 
-	return $sign == md5($str);
+    return $sign == md5($str);
 }
 ```
 
@@ -280,9 +310,9 @@ def verifySinature(callback_url, callback_token):
 
 
 ###Return Value
-*	Adxmi will proceed the next operation according to the returning http status code from developers' server. The normal http status code should be 200 or 403.
-*	If the http status code is 200, that means developers already received and processed the message normally.
-*	If the http status code is 403, that means developers refuse this request, which also means middle-tier server will not repeatedly make request to developers' server.
-*	If timeout, or the http status code isn't one of 2xx, 301, 302, 303, 307, 400 and 403, the middle-tier server will make request to developers' server again in the next cycle.
-*	There will be delays in the next cycle request to developers' server, the delay time will respectively be: 5s, 10s, 60s, 300s, 600s, 3600s(since last request). Which means, in the worst case, Adxmi will send seven *	requests. If all of the seven requests fail, the link will be discarded.
-*	Because of network issues or other reasons, developers' server will receive multiple records with the same order ID. In this case, developers' server need to abandon the duplicate records, and output with http status code 403.
+*    Adxmi will proceed the next operation according to the returning http status code from developers' server. The normal http status code should be 200 or 403.
+*    If the http status code is 200, that means developers already received and processed the message normally.
+*    If the http status code is 403, that means developers refuse this request, which also means middle-tier server will not repeatedly make request to developers' server.
+*    If timeout, or the http status code isn't one of 2xx, 301, 302, 303, 307, 400 and 403, the middle-tier server will make request to developers' server again in the next cycle.
+*    There will be delays in the next cycle request to developers' server, the delay time will respectively be: 5s, 10s, 60s, 300s, 600s, 3600s(since last request). Which means, in the worst case, Adxmi will send seven *    requests. If all of the seven requests fail, the link will be discarded.
+*    Because of network issues or other reasons, developers' server will receive multiple records with the same order ID. In this case, developers' server need to abandon the duplicate records, and output with http status code 403.

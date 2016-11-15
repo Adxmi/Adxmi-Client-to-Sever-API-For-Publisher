@@ -75,7 +75,7 @@ http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=y
 | package          | The package name of the offer                                                                                       | string |
 | adtxt            | The introduction of the offer                                                                                       | string |
 | task             | The introduction of how to complete the offer                                                                       | string |
-| payout           | The revenue($) of the offer                                                                                         | string |
+| payout           | The revenue($) of the offer                                                                                         | double |
 | point            | The amount of virtual currency that will be earned for completing the offer(exchange rate is set on www.adxmi.com ) | int    |
 | cap              | The maximum conversion allowed of the offer                                                                         | int    |
 | trackinglink     | The link that is used to track conversion                                                                           | string |

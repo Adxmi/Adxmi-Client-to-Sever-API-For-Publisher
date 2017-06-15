@@ -24,7 +24,7 @@ In order to use this api, publishers need to go to our official website (www.adx
 | Parameter  | Description                                                                                                                           | Type   | Mandatory |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------|--------|-----------|
 | app_id     | Apply from www.adxmi.com for the application                                                                                          | string | Y         |
-| sign       | Signature for query parameters. See URL Signature Function for detail                                                                 | string | Y         |
+| sign       | Signature for query parameters. See URL Signature Function for detail (Deprecated)                                                                | string | N         |
 | page_size  | Define the number of offers                                                                                                           | int    | Y         |
 | os         | The operating system of the device(`ios` or `android`)                                                                                | string | Y         |
 | user_id    | Identify the user who completed a task. The server callback can return this value when user completed a task                          | string | N         |

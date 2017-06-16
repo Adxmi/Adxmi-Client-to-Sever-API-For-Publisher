@@ -74,7 +74,7 @@ http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=y
 | package          | The package name of the offer                                                                                       | string |
 | adtxt            | The introduction of the offer                                                                                       | string |
 | task             | The introduction of how to complete the offer                                                                       | string |
-| payout           | The revenue($) of the offer                                                                                         | string |
+| payout           | The revenue($) of the offer                                                                                         | double |
 | point            | The amount of virtual currency that will be earned for completing the offer(exchange rate is set on www.adxmi.com ) | int    |
 | cap              | The maximum conversion allowed of the offer                                                                         | int    |
 | trackinglink     | The link that is used to track conversion                                                                           | string |
@@ -154,7 +154,7 @@ http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=y
             "package": "com.multislot.multislot",
             "category": "SDL",
             "trackinglink": "http://ad.api.yyapi.net/aos/v1/eff?s=1,3,b3a3277b8fdd54bc,E9MQ4zTTAq,1,ye8V4YI.TtcdaOrELc0aqh7DqRIAiNTzYWXl8c8uThOfcQNzC.qUSGBQgI0TTi8R3Db3yXLhF.apsYNHLLRtarihBJwOx93gZoYWr94-PTeynGwRgbNWF-3aRA242z5k9B5wuK8R9x9Z0P4b9k.ivml3BX0WHxpqpG30rfv9eawRK7X6I0KPXgwp6I4BoBdmWfts0HYvK2JchdF.,BS7n2zLVZyfIL8E9zl5bPSnIipxaClfqTtZNJimzb0DHxQ6R35ZF-7nUU7C3PWW2tI4xyQ__"
-        },
+        }
     ]
 }
 ```

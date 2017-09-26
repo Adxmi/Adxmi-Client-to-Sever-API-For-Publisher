@@ -90,7 +90,7 @@ http://ad.api.yyapi.net/v1/online?app_id=b3a3277b8fdd54bc&page_size=20&user_id=y
 | creatives        | The image materials of the offer                                                                                    | array  |
 | category         | The category of the offer                                                                                           | string |
 | store_label      | The store (AppStore/GooglePlay) label of the offer                                                                  | array  |
-| store_rating     | The store (AppStore/GooglePlay) rating of the offer                                                                 | float  |
+| store_rating     | The store (AppStore/GooglePlay) rating of the offer                                                                 | string  |
 | size             | The size of the package                                                                                             | string |
 | mandatory_device | The mandatory device that offer needs to finish a conversion.`true` means mandatory                                 | array  |
 
